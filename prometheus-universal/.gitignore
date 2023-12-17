@@ -1,0 +1,15 @@
+*.log*
+
+.npm
+
+dist/
+node_modules/
+
+*.ngFactory.ts
+*.shim.ts
+*.scss.ts
+*.css*
+
+webpack.records.json
+
+.DS_Store

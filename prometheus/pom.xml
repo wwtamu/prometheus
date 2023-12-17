@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.prometheus</groupId>
+	<artifactId>parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Prometheus Parent</name>
+
+	<description>Parent Project for Prometheus</description>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>eureka</module>
+		<module>core</module>
+		<module>development</module>
+		<module>domain</module>
+		<module>admin</module>
+		<module>email</module>
+		<module>auth</module>
+		<module>sidebar</module>
+		<module>remote</module>
+		<module>distributed</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.4.3.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Brixton.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.eluder.coveralls</groupId>
+					<artifactId>coveralls-maven-plugin</artifactId>
+					<version>4.3.0</version>
+					<configuration>
+						<repoToken>gjy8glqmiV14OR7AxswvOPZQlhGIFDkFo</repoToken>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.7.6.201602180812</version>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.asciidoctor</groupId>
+					<artifactId>asciidoctor-maven-plugin</artifactId>
+					<version>1.5.3</version>
+					<executions>
+						<execution>
+							<id>output-html</id>
+							<phase>generate-resources</phase>
+							<goals>
+								<goal>process-asciidoc</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>1.4.3.RELEASE</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<reporting>
+		<outputDirectory>${project.build.directory}/site</outputDirectory>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<instrumentation>
+						<ignoreTrivial>true</ignoreTrivial>
+					</instrumentation>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+						<maxmem>256m</maxmem>
+						<aggregate>true</aggregate>
+					</formats>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</reporting>
+
+</project>

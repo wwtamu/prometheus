@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+div button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card.collapsed {
+  margin-bottom: 0;
+  max-width: 45px;
+  min-width: 45px;
+}
+
+.card.editing {
+  border-color: $input-border-focus;
+}

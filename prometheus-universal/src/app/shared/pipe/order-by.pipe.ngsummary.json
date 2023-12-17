@@ -1,0 +1,1 @@
+{"summaries":[{"symbol":{"__symbol":0},"metadata":{"__symbolic":"class"},"type":{"summaryKind":0,"type":{"reference":{"__symbol":0},"diDeps":[],"lifecycleHooks":[]},"name":"orderBy","pure":false}}],"symbols":[{"__symbol":0,"name":"OrderBy","filePath":"/Users/wwelling/projects/prometheus-universal/src/app/shared/pipe/order-by.pipe.d.ts"}]}

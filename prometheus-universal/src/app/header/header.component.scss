@@ -1,0 +1,28 @@
+header nav.navbar {
+  border-radius: 0;
+}
+
+header nav span.title {
+  white-space: nowrap;
+}
+
+header nav.navbar .navbar-toggler {
+  float: right;
+}
+
+header nav.navbar .navbar-toggler:hover,
+header nav.navbar button.dropdown-item {
+  cursor: pointer;
+}
+
+header nav.navbar .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+prometheus-sidebar-control {
+  display: inline-flex;
+  float: left;
+  margin-right: 10px;
+  margin-top: 2px;
+}

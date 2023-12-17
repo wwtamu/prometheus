@@ -1,0 +1,22 @@
+@import '../../../../styles/variables.scss';
+
+div ul li.list-group-item {
+  text-align: center;
+  padding: 10px;
+}
+
+div.card-content {
+  margin-bottom: -1px;
+}
+
+div.card-content.editing {
+  margin-bottom: 0;
+}
+
+span.card-link {
+  color: $link-color;
+}
+
+span.card-link:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+<div class="control">
+  <button class="btn" type="button" (click)="toggle()" placement="bottom" ngbTooltip="{{ 'sidebar.control.toggle' | translate }}" container="body">
+    <i class="fa fa-lg" [ngClass]="{'fa-angle-double-left': !collapsed, 'fa-angle-double-right': collapsed}" aria-hidden="true"></i>
+  </button>
+  <button *ngIf="!collapsed && !user.isAnonymous() && !editing" class="btn" type="button" (click)="edit()" placement="bottom" ngbTooltip="{{ 'sidebar.control.edit' | translate }}" container="body">
+    <i class="fa fa-wrench" aria-hidden="true"></i>
+  </button>
+  <button *ngIf="!collapsed && !user.isAnonymous() && editing" class="btn" type="button" (click)="exit()" placement="bottom" ngbTooltip="{{ 'sidebar.control.exit' | translate }}" container="body">
+    <i class="fa fa-remove" aria-hidden="true"></i>
+  </button>
+  <button *ngIf="!collapsed && !user.isAnonymous() && editing" class="btn btn-primary" type="button" (click)="addCard()" placement="bottom" ngbTooltip="{{ 'sidebar.control.addCard' | translate }}" container="body">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>

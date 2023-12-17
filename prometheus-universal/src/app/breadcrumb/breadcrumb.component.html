@@ -1,0 +1,3 @@
+<nav class="breadcrumb">
+  <a *ngFor="let breadcrumb of breadcrumbs.observableBreadcrumbs | async" class="breadcrumb-item" routerLink="{{breadcrumb.link}}">{{ breadcrumb.label | translate}}</a>
+</nav>

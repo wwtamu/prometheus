@@ -1,0 +1,15 @@
+<prometheus-header [user]="auth.observableUser | async" [collapsed]="(observableSidebarCollapsed | async)" [editing]="(observableSidebarEdit | async)" (onToggleSidebarCollapse)="toggleSidebar($event)" (onToggleSidebarEdit)="editSidebar($event)"></prometheus-header>
+<main>
+  <div class="container-fluid">
+    <template ngbModalContainer></template>
+    <div class="sidebar" [ngClass]="{'collapsed': (observableSidebarCollapsed | async), 'col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-2': !(observableSidebarCollapsed | async)}">
+      <prometheus-sidebar [user]="auth.observableUser | async" [sidebar]="sidebars.observableSidebar | async" [collapsed]="(observableSidebarCollapsed | async)" [editing]="(observableSidebarEdit | async)"></prometheus-sidebar>
+    </div>
+    <div class="content" [ngClass]="{'full': (observableSidebarCollapsed | async), 'col-sm-8 col-md-9 col-lg-9 col-xl-10 hidden-xs-down': !(observableSidebarCollapsed | async)}">
+      <prometheus-breadcrumb></prometheus-breadcrumb>
+      <prometheus-notification [channel]="channel "></prometheus-notification>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
+<prometheus-footer></prometheus-footer>

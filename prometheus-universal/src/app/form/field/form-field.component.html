@@ -1,0 +1,44 @@
+<div [formGroup]="form" class="form-group" [ngClass]="{'has-success': isSuccess(), 'has-warning': isWarning(), 'has-danger': isDanger()}">
+  <label *ngIf="showLabel()" [attr.for]="input.property">{{ input.label | translate }}</label>
+  <div [ngSwitch]="resolveInputType()">
+
+    <div *ngSwitchCase="'TEXT'">
+      <input *ngIf="!input.repeatable" class="form-control" [formControl]="form.controls[input.id]" [id]="input.id" [type]="toLowerCase(input.type)" [(ngModel)]="input.value" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+      <span *ngIf="input.repeatable">
+        <input *ngFor="let repeat of input.value; let i = index;" class="form-control" [formControl]="form.controls[input.id]" name="{{input.id}}-{{i}}" [type]="toLowerCase(input.type)" [(ngModel)]="input.value[i]" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+      </span>
+    </div>
+
+    <input *ngSwitchCase="'EMAIL'" class="form-control" [formControl]="form.controls[input.id]" [id]="input.id" [type]="toLowerCase(input.type)" [(ngModel)]="input.value" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+
+    <input *ngSwitchCase="'PASSWORD'" class="form-control" [formControl]="form.controls[input.id]" [id]="input.id" [type]="toLowerCase(input.type)" [(ngModel)]="input.value" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+
+    <div *ngSwitchCase="'CHECKBOX'" class="form-check">
+      <input class="form-control" [formControl]="form.controls[input.id]" [name]="input.id" [type]="toLowerCase(input.type)" [ngModel]="input.value" (change)="toggleCheckbox()" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+    </div>
+
+    <select *ngSwitchCase="'SELECT'" class="form-control custom-select" [formControl]="form.controls[input.id]" [id]="input.id" [(ngModel)]="input.value" [ngClass]="{'form-control-success': isSuccess(), 'form-control-warning': isWarning(), 'form-control-danger': isDanger()}">
+      <option *ngFor="let option of optionsSubject.asObservable() | async" [ngValue]="option.value">{{ option.gloss }}</option>
+    </select>
+
+    <div *ngSwitchCase="'ICON'">
+
+    </div>
+
+    <div *ngIf="showValidationMessage()" class="form-control-feedback">
+      <span *ngIf="minLengthError()">
+          {{ input.validations.minLength.message | translate }}
+      </span>
+      <span *ngIf="maxLengthError()">
+          {{ input.validations.maxLength.message | translate }}
+      </span>
+      <span *ngIf="patternError()">
+          {{ input.validations.pattern.message | translate }}
+      </span>
+      <span *ngIf="requiredError()" class="error">
+          {{ input.validations.required.message | translate }}
+      </span>
+    </div>
+
+  </div>
+</div>

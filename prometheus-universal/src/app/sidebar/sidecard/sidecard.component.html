@@ -1,0 +1,4 @@
+<div class="card" [ngClass]="{'collapsed': collapsed, 'editing': editing}">
+  <prometheus-sidecard-expanded [sidecard]="sidecard" [user]="user" [sidebar]="sidebar" [collapsed]="collapsed" [editing]="editing"></prometheus-sidecard-expanded>
+  <prometheus-sidecard-collapsed [sidecard]="sidecard" [collapsed]="collapsed" [editing]="editing"></prometheus-sidecard-collapsed>
+</div>

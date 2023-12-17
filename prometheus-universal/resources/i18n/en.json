@@ -1,0 +1,227 @@
+{
+  "link": {
+    "home": "Home",
+    "about": "About"
+  },
+
+  "header": {
+    "title": "Prometheus",
+    "home": "Home",
+    "about": "About",
+    "registration": "Sign Up",
+    "login": "Login",
+    "menu": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "admin": "Administration",
+      "account": "Account",
+      "user": "User",
+      "application": "Application",
+      "logout": "Logout"
+    }
+  },
+
+  "footer": {
+    "project": "Prometheus Universal"
+  },
+
+  "breadcrumb": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "registration": "Registration",
+    "login": "Login",
+    "profile": "Profile",
+    "settings": "Settings",
+    "admin": "Administration",
+    "account": "Account",
+    "user": "User",
+    "application": "Application"
+  },
+
+  "about": {
+    "contact": "Contact"
+  },
+
+  "admin": {
+    "account": "Account",
+    "user": "User",
+    "application": "Application"
+  },
+
+  "registration": {
+    "verify": "An email has been sent to {{email}}. Please follow link in email to continue registration.",
+    "complete": "Registration successful."
+  },
+
+  "login.success": "Login successful.",
+
+  "logout.success": "Logout successful.",
+
+  "form": {
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "modal": {
+      "addSidecard": "Create new section",
+      "editSidecard": "Edit section",
+      "removeSidecard": "Remove section",
+      "addSidecardLink": "Create new link",
+      "editSidecardLink": "Edit link",
+      "removeSidecardLink": "Remove link"
+    }
+  },
+
+  "username": {
+    "label": "Username",
+    "validation": {
+      "required": "Username is required!",
+      "minLength": "Username must be at least 5 characters!",
+      "maxLength": "Username can not be more than 20 characters!"
+    }
+  },
+  "password": {
+    "label": "Password",
+    "validation": {
+      "required": "Password is required!",
+      "minLength": "Password must be at least 5 characters!",
+      "maxLength": "Password can not be more than 20 characters!"
+    }
+  },
+  "confirm": {
+    "label": "Confirm",
+    "validation": {
+      "required": "Confirm password is required!",
+      "minLength": "Confirm password must be at least 5 characters!",
+      "maxLength": "Confirm password can not be more than 20 characters!"
+    }
+  },
+
+  "email": {
+    "label": "Email",
+    "validation": {
+      "required": "Email is required!",
+      "pattern": "Invalid email!",
+      "minLength": "Email must be at least 5 characters!",
+      "maxLength": "Email can not be more than 50 characters!"
+    }
+  },
+  "firstName": {
+    "label": "First Name",
+    "validation": {
+      "required": "First Name is required!",
+      "minLength": "First Name must be at least 2 characters!",
+      "maxLength": "First Name can not be more than 40 characters!"
+    }
+  },
+  "lastName": {
+    "label": "Last Name",
+    "validation": {
+      "required": "Last Name is required!",
+      "minLength": "Last Name must be at least 2 characters!",
+      "maxLength": "Last Name can not be more than 40 characters!"
+    }
+  },
+
+  "title": {
+    "label": "Title",
+    "validation": {
+      "required": "Title is required!",
+      "minLength": "Title must be at least 2 characters!",
+      "maxLength": "Title can not be more than 40 characters!"
+    }
+  },
+  "info": {
+    "label": "Info",
+    "validation": {
+      "required": "Info is required!",
+      "minLength": "Info must be at least 5 characters!",
+      "maxLength": "Info can not be more than 100 characters!"
+    }
+  },
+
+  "external": {
+    "label": "External",
+    "validation": {
+      "required": "External is required!"
+    }
+  },
+  "label": {
+    "label": "Label",
+    "validation": {
+      "required": "Label is required!",
+      "minLength": "Label must be at least 2 characters!",
+      "maxLength": "Label can not be more than 50 characters!"
+    }
+  },
+  "destination": {
+    "label": "Destination",
+    "validation": {
+      "required": "Destination is required!",
+      "minLength": "Destination must be at least 4 characters!",
+      "maxLength": "Destination can not be more than 200 characters!"
+    }
+  },
+  "icon": {
+    "label": "Icon",
+    "validation": {
+      "required": "Icon is required!",
+      "minLength": "Icon must be at least 2 characters!",
+      "maxLength": "Icon can not be more than 100 characters!"
+    }
+  },
+
+  "exception": {
+    "default": "An unexpected error has occured!",
+    "confirm.password": "Passwords do not match!",
+    "username.exists": "Username already exists!",
+    "email.exists": "User with email {{email}} already exists!",
+    "incorrect.credentials": "Incorrect username or password!"
+  },
+
+  "path": {
+    "unauthenticated": "You must be authenticated to access {{path}}. Please login.",
+    "unauthorized": "You are not authorized to access {{path}}. Admin only!"
+  },
+
+  "sidebar": {
+    "control": {
+      "edit": "Edit sidebar",
+      "addCard": "Add section",
+      "removeCard": "Remove section",
+      "editCard": "Edit section",
+      "restoreDefaults": "Restore defaults",
+      "addLink": "Add link",
+      "removeLink": "Remove link",
+      "editLink": "Edit link",
+      "exit": "Exit edit mode",
+      "toggle": "Toggle sidebar open/close"
+    }
+  },
+
+  "context.sidebar.default": {
+    "sidecard.1": {
+      "title": "Menu",
+      "info": "Welcome to Prometheus Universal!"
+    }
+  },
+  "context.sidebar.profile": {
+    "sidecard.1": {
+      "title": "Profile Menu",
+      "info": "Welcom to your Profile!"
+    }
+  },
+  "context.sidebar.settings": {
+    "sidecard.1": {
+      "title": "Settings Menu",
+      "info": "Welcome to you Settings!"
+    }
+  },
+  "context.sidebar.admin": {
+    "sidecard.1": {
+      "title": "Administration Menu",
+      "info": "Welcome to the Administration Menu!"
+    }
+  }
+
+}

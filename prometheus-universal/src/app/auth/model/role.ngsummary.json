@@ -1,0 +1,1 @@
+{"summaries":[{"symbol":{"__symbol":0},"metadata":{"ROLE_ANONYMOUS":0,"ROLE_USER":1,"ROLE_ADMIN":2}}],"symbols":[{"__symbol":0,"name":"Role","filePath":"/Users/wwelling/projects/prometheus-universal/src/app/auth/model/role.d.ts"}]}

@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title">{{ label | translate }}</h4>
+</div>
+<div class="modal-body">
+  <div *ngFor="let key of keys">
+    <span><strong>{{ key }}: </strong>{{ data[key] }}</span>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="confirm()">{{ 'form.confirm' | translate }}</button>
+  <button type="button" class="btn btn-secondary" (click)="cancel()">{{ 'form.cancel' | translate }}</button>
+</div>

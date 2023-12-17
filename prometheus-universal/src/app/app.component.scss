@@ -1,0 +1,48 @@
+@import '../styles/variables.scss';
+
+prometheus-header {
+  display: table-row;
+}
+
+main {
+  display: table-row;
+  table-layout: fixed;
+  height: 100%;
+  padding-top: 15px;
+}
+
+main div.container-fluid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+main div.sidebar {
+  transition: width 350ms ease-in-out;
+}
+@media (min-width: 576px) {
+  main div.sidebar {
+    padding-right: 0;
+  }
+}
+
+main div.sidebar.collapsed {
+  width: 45px;
+}
+
+main div.content {
+  transition: width 350ms ease-in-out;
+}
+
+main div.content.full {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+prometheus-footer {
+  display: table-row;
+  width: 100%;
+  text-align: center;
+  background-color: $gray-lighter;
+}

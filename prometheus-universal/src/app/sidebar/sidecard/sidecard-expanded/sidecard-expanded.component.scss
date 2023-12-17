@@ -1,0 +1,40 @@
+@import '../../../../styles/variables.scss';
+
+div.card-control {
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+button.card-control {
+  height: 27px;
+  width: 30px;
+  padding: 0;
+}
+
+div.link-control {
+  margin-right: -15px;
+}
+
+i.link-control {
+  margin-right: 5px;
+}
+
+i.link-control:hover {
+  cursor: pointer;
+}
+
+div.card-collapsed {
+  margin-top: -1px;
+}
+
+div ul li.list-group-item.editing {
+  border-radius: 0.25rem;
+}
+
+span.card-link {
+  color: $link-color;
+}
+
+span.card-link:hover {
+  cursor: pointer;
+}

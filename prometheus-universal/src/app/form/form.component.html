@@ -1,0 +1,9 @@
+<form *ngIf="active" (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+  <div *ngFor="let input of inputs.values()">
+    <prometheus-form-field [inputs]="inputs" [input]="input" [form]="form"></prometheus-form-field>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" [disabled]="disabled()">{{ 'form.submit' | translate }}</button>
+    <button type="button" class="btn btn-warning" (click)="onCancel()">{{ 'form.cancel' | translate }}</button>
+  </div>
+</form>

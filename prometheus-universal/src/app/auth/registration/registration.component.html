@@ -1,0 +1,2 @@
+<prometheus-form *ngIf="!isVerified()" [name]="'VERIFY'" [finishedObservable]="finished.asObservable()" (onSubmitEmitter)="verify($event)"></prometheus-form>
+<prometheus-form *ngIf="isVerified()" [name]="'REGISTER'" [finishedObservable]="finished.asObservable()" (onSubmitEmitter)="register($event)"></prometheus-form>

@@ -1,0 +1,10 @@
+<div *ngIf="sidecard.links.length > 0" class="card-content" [@expand]="collapsed" [ngClass]="{'editing': editing}">
+  <ul class="list-group list-group-flush">
+    <!-- links -->
+    <li *ngFor="let link of sidecard.links | orderBy: ['+id']" class="list-group-item">
+      <a *ngIf="!link.external" class="card-link" routerLink="{{link.destination}}"><i class="{{link.icon}}" aria-hidden="true" placement="right" ngbTooltip="{{ link.label | translate }}" container="body"></i></a>
+      <!-- TODO: href must have http:// -->
+      <a *ngIf="link.external" class="card-link" target="_blank" href="http://{{link.destination}}"><i class="{{link.icon}}" aria-hidden="true" placement="right" ngbTooltip="{{ link.label | translate }}" container="body"></i></a>
+    </li>
+  </ul>
+</div>

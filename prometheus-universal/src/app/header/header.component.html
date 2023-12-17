@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-dark bg-inverse" [@collapse]="(observableNavCollapsed | async)">
+    <span class="title">
+      <button class="navbar-toggler hidden-sm-up" type="button" (click)="toggleNavbar()">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </button>
+      <div [ngClass]="{'clearfix': !(observableNavCollapsed | async)}">
+        <prometheus-sidebar-control [user]="user" [collapsed]="collapsed" (onToggleSidebarCollapse)="toggleSidebar($event)" [editing]="editing" (onToggleSidebarEdit)="edit($event)"></prometheus-sidebar-control>
+        <a class="navbar-brand" routerLink="home"><i class="fa fa-university fa-fw" aria-hidden="true"></i> <span class="hidden-xs-down">{{ 'header.title' | translate }}</span></a>
+    </div>
+    </span>
+    <div [ngbCollapse]="(observableNavCollapsed | async)" class="collapse navbar-toggleable-xs" id="collapsingNav">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active"><i class="fa fa-home fa-fw" aria-hidden="true"></i> {{ 'header.home' | translate }}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" routerLinkActive="active"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> {{ 'header.about' | translate }}</a>
+        </li>
+      </ul>
+      <ul *ngIf="user.isAnonymous()" class="nav navbar-nav float-xs-right">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="registration" routerLinkActive="active"><i class="fa fa-book fa-fw" aria-hidden="true"></i> {{ 'header.registration' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login" routerLinkActive="active"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> {{ 'header.login' | translate }}</a>
+        </li>
+      </ul>
+      <div *ngIf="!user.isAnonymous()" ngbDropdown class="d-inline-block float-xs-right">
+        <button class="btn btn-outline-primary" id="userMenu" ngbDropdownToggle>{{user.lastName}}, {{user.firstName}}</button>
+        <div class="dropdown-menu" aria-labelledby="userMenu">
+          <a class="dropdown-item" routerLink="profile" routerLinkActive="active"><i class="fa fa-user fa-fw" aria-hidden="true"></i> {{ 'header.menu.profile' | translate }}</a>
+          <a class="dropdown-item" routerLink="settings" routerLinkActive="active"><i class="fa fa-gear fa-fw" aria-hidden="true"></i> {{ 'header.menu.settings' | translate }}</a>
+          <div *ngIf="user.isAdmin()" class="dropdown-divider"></div>
+          <a *ngIf="user.isAdmin()" class="dropdown-item" routerLink="admin" routerLinkActive="active"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> {{ 'header.menu.admin' | translate }}</a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> {{ 'header.menu.logout' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
